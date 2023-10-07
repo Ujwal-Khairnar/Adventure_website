@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+#wrapper{  /*ha sarvat main container ahe ithe apan je pn karu te sarva document la apply hoyeil*/
+    height: 100vh;  /*main height of the viewport*/
+    overflow-x: hidden;  /*x axis madhe scroll nhi zhala pahije mhnun hidden*/
+    overflow-y: auto;    /*to scroll in y-axis*/
+    perspective: 10px;     /*to enable 3D prespective*/
+} 
+ 
+.container{
+    position:relative; /*iski position jaan bujkar relative karni hai kyuki absolute position sirf non-static positon par work karta hai aur div container ye static hai abhi ke liye*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transform-style: preserve-3d;/*jab humne wrapper class mei bolke rakha ha ki prespective on rakho toh humne yaha pe hi transform-style on rakhna padega n isliye ye chiz karri hai*/
+    z-index: -1;/*iska use ye decide karne ke liye hota hai ki konsi chiz upar ayega konsi chize neeche jayegi*/
+}
+
+/*transform use karne ke baad hi parallax effect aayega matlab dikhne lagega*/
+
+.background{
+    transform:translateZ(-40px) scale(5);/*translate use isliye karte hai ki z axis me usko dur karna hai aur uske baad hum scale karenge usko */
+}
+
+.foreground {
+    transform: translateZ(-20px) scale(3);
+}
+
+.background,.foreground{
+    position:absolute;/*agar overlap karwana hai images ko toh overlap karna padega*/
+    height: 100%;
+    width: 100%;  
+    object-fit:cover;/*ye use karne se sab kuch natural dikhne lagta hai aur aspect ratio maintain rehta hai*/
+    z-index: -1;
+}  
+
+/*Adventure ko change karne ke liye*/
+h1{
+    position: absolute;
+    top: 5rem;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 10rem; /*ye size lega body(root element) and multiply karega 10 se*/
+    letter-spacing: 4px;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /*a stands for opacity 0 is low opacity and 1.0 is full opacity*/
+    font-family: 'Autour One', cursive;
+}
