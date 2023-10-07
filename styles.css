@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+    font-family: "poppins", "sans-serif";
 }
 
 #wrapper{  /*ha  sarvat main container ahe ithe apan je pn karu te sarva document la apply hoyeil*/
