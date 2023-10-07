@@ -1,14 +1,16 @@
-*{
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     
 }
 
-#wrapper{  /*ha sarvat main container ahe ithe apan je pn karu te sarva document la apply hoyeil*/
+#wrapper{  /*ha  sarvat main container ahe ithe apan je pn karu te sarva document la apply hoyeil*/
     height: 100vh;  /*main height of the viewport*/
     overflow-x: hidden;  /*x axis madhe scroll nhi zhala pahije mhnun hidden*/
-    overflow-y: auto;    /*to scroll in y-axis*/
+    overflow-y:auto;    /*to scroll in y-axis*/
     perspective: 10px;     /*to enable 3D prespective*/
 } 
  
@@ -21,7 +23,7 @@
     transform-style: preserve-3d;/*jab humne wrapper class mei bolke rakha ha ki prespective on rakho toh humne yaha pe hi transform-style on rakhna padega n isliye ye chiz karri hai*/
     z-index: -1;/*iska use ye decide karne ke liye hota hai ki konsi chiz upar ayega konsi chize neeche jayegi*/
 }
-
+ 
 /*transform use karne ke baad hi parallax effect aayega matlab dikhne lagega*/
 
 .background{
@@ -44,11 +46,61 @@
 h1{
     position: absolute;
     top: 5rem;
-    left: 50%;
-    transform: translate(-50%);
+    /* left: 50%;
+    transform: translate(-50%); */
     font-size: 10rem; /*ye size lega body(root element) and multiply karega 10 se*/
     letter-spacing: 4px;
     color: white;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /*a stands for opacity 0 is low opacity and 1.0 is full opacity*/
     font-family: 'Autour One', cursive;
+}
+
+section{
+    background-color: rgb(45, 45, 45);
+    color: white;
+    padding: 5rem 0; /*5rem is for top-bottom and 0 is for left and right//// Agar em liya toh apne parent ki font size leta hai*/
+}
+
+.secHeading{
+    font-size: 5rem;
+    padding: 0 10rem;
+}
+
+.text{
+    font-size: 1.5rem;
+    padding: 0 10rem;
+    margin: 5rem 0;
+}
+
+.bg{
+    position: relative;
+    width: 100%;
+    background-attachment: fixed;/*to fix the image and other element will move over it*/
+    background-size: cover;/*to make it fit and look natural */
+    background-position: center;/*to make the image center*/
+    height: 500px;
+}
+
+.desc{
+    position: absolute;
+    background-color: white;
+    color: black;
+    padding: 0.5rem 2.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+
+.bg1{
+    background-image: url(sport-1.jpg);
+}
+
+.bg2{
+    background-image: url(sport-2.jpg);
+}
+
+.bg3{
+    background-image: url(sport-3.jpg);
 }
