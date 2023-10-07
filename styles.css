@@ -27,11 +27,11 @@
 /*transform use karne ke baad hi parallax effect aayega matlab dikhne lagega*/
 
 .background{
-    transform:translateZ(-40px) scale(5);/*translate use isliye karte hai ki z axis me usko dur karna hai aur uske baad hum scale karenge usko */
+    transform:translateZ(-20px) scale(4);/*translate use isliye karte hai ki z axis me usko dur karna hai aur uske baad hum scale karenge usko */
 }
 
 .foreground {
-    transform: translateZ(-20px) scale(3);
+    transform: translateZ(-10px) scale(2);
 }
 
 .background,.foreground{
